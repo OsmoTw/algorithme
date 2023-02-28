@@ -1,0 +1,56 @@
+ALGORITHM nb_length_in_sentence
+VAR
+ str : STRING : ="hello amazing world";
+ count : INTEGER :=0;
+
+BEGIN
+    FOR (int i=0 ; i < str.length() ; i++ ) DO 
+    IF (str.charAt[i] != " ") THEN
+     count++;
+     END_IF
+    END_FOR
+    write(count)
+END
+
+
+
+
+ALGORITHM nb_of_word_in_sentence
+VAR
+    str : STRING : ="hello amazing world";
+    count : INTEGER :=1;
+
+BEGIN
+    FOR i str DO
+    IF i == " " THEN
+    count += 1
+    END_IF
+    END_FOR
+    write(count)
+END
+
+
+
+
+ALGORITHM nb_of_vowels_in_sentence
+VAR
+    str : STRING : = "hello amazing world" ;
+    count : INTEGER :=0;
+    vowels : CHAR : = ["a","e","i","o","u"]
+BEGIN
+    FOR i in str DO
+    IF i in vowels THEN
+    count ++ ;
+    END_IF;
+    num_vowels = count ;
+    END_FOR
+    write(num_vowels)
+END
+
+
+ALGORITHM algorithm_name
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+END
