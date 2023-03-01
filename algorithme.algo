@@ -48,9 +48,68 @@ BEGIN
 END
 
 
-ALGORITHM algorithm_name
+ALGORITHM overlapping_elements
 VAR
-    set_declarations
+    set1,set2, : ARRAY_OF INTEGER[10];
+    i,j = INTEGER;
+    sum = INTEGER :=0 ;
+
 BEGIN
-    set_instructions
+    FOR i FROM 0 TO set1.length-1  DO
+
+    FOR i FROM 0 TO set2.length-1 DO
+          IF (set1[i] = set2[j]) THEN
+          return TRUE ;
+          BREAK ;
+          ELSE 
+          sum := sum + set1[i];
+          END_IF 
+    END_FOR
+
+       FOR i FROM 0 TO set2.length-1  DO
+
+       FOR i FROM 0 TO set1.length-1 DO
+       IF (set2[i] = set1[j]) THEN
+          return TRUE ;
+          BREAK 
+          ELSE
+                 sum := sum + set2[i] ;
+                 END_IF
+                 END_FOR
+        return FALSE ;
+        END_FOR
+        write(sum)
 END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROCEDURE insertion_sort(VAR array: ARRAY_OF INTEGER)
+VAR
+i,j,current: INTEGER;
+BEGIN
+    FOR i FROM 1 TO array.length-1 DO 
+        current := array[i]
+        j:=i-1
+        WHILE (j>0 AND array[j]> current ) DO 
+        array[j+1] := array[j]
+        j:=j-1
+        END_WHILE
+        array[j+1] := current // RESET
+        END_FOR
+        END 
