@@ -90,15 +90,6 @@ END
 
 
 
-
-
-
-
-
-
-
-
-
 PROCEDURE insertion_sort(VAR array: ARRAY_OF INTEGER)
 VAR
 i,j,current: INTEGER;
@@ -113,3 +104,26 @@ BEGIN
         array[j+1] := current // RESET
         END_FOR
         END 
+
+
+
+
+
+
+
+
+        FUNCTION verif_pol(str : STRING ) : BOOLEAN;
+VAR 
+  i: INTEGER;
+BEGIN
+  i := 1;
+  IF (LENGTH(str) <= 1) THEN
+    verif_pol := true;
+  ELSE IF (str[i] <> str[LENGTH(str)]) THEN
+    verif_pol := false;  
+  ELSE
+    i := i + 1;
+    verif_pol := verif_pol(SUBSTR(str, 2, LENGTH(str) - 2));
+  END_IF;
+END;
+
